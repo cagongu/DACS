@@ -1,0 +1,476 @@
+.image-container {
+    position: relative;
+    width: 100%;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Màu nền đen mờ */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 10px;
+    /* Điều chỉnh khoảng cách bottom tùy ý */
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.navigation button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.navigation button:focus {
+    outline: none;
+}
+
+.image-counter {
+    color: white;
+    font-size: 16px;
+    margin: 0 10px;
+    /* Khoảng cách giữa số ảnh và nút điều hướng */
+}
+
+/* main-info */
+.title {
+    margin-top: 16px;
+}
+.title>h1 {
+    display: inline;
+    font-weight: bold;
+    font-size: 18px;
+    color: #3c4146;
+    line-height: 27px;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+.address {
+    margin-top: 4px;
+    font-weight: normal;
+    font-size: 15px;
+    color: #3c4146;
+    line-height: 22px;
+}
+
+.price {
+    margin-top: 4px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 150%;
+    color: #0499a8;
+}
+
+.info-title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 150%;
+    color: #3c4146;
+    margin-top: 32px;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.info-content-body {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 22px;
+    color: #3c4146;
+}
+
+.agent-info {
+    width: 100%;
+    padding-left: 56px;
+    height: 62px;
+    position: relative;
+    margin-top: 16px;
+    border-bottom: 1px solid #e6ecf0;
+}
+
+.agent-info>img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+img {
+    border: 0;
+}
+
+.agent-name {
+    margin-top: 3px;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+    color: #3c4146;
+    width: 100%;
+}
+
+a,
+a:focus,
+a:hover,
+a:active {
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+a {
+    color: #222;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+a {
+    background-color: transparent;
+}
+
+.agent-date {
+    font-size: 13px;
+    line-height: 19px;
+    color: #657786;
+    width: 100%;
+}
+/* 
+@media (min-width: 992px) {
+    .side-bar {
+        display: block;
+        float: right;
+        position: sticky;
+        top: 60px;
+    }
+} */
+
+.side-bar {
+    display: block;
+    width: 340px;
+    float: right;
+}
+
+.widget {
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    border-radius: 4px;
+    width: 100%;
+    float: left;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(70, 80, 110, .3);
+    border-radius: 12px;
+}
+@media (min-width: 992px) {
+    .widget .agent-info {
+        margin-top: 0;
+        padding-left: 60px;
+    }
+}
+
+.agent-info {
+    width: 100%;
+    padding-left: 56px;
+    height: 62px;
+    position: relative;
+    margin-top: 16px;
+    border-bottom: 1px solid #e6ecf0;
+}
+.agent-info>img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+img {
+    border: 0;
+}
+.agent-name {
+    margin-top: 3px;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+    color: #3c4146;
+    width: 100%;
+}
+a,
+a:focus,
+a:hover,
+a:active {
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+a {
+    color: #222;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+a {
+    background-color: transparent;
+}
+.agent-name>svg {
+    margin-left: 8px;
+    vertical-align: sub;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+.agent-date {
+    font-size: 13px;
+    line-height: 19px;
+    color: #657786;
+    width: 100%;
+}
+/* 
+@media (min-width: 992px) {
+    .widget .agent-contact {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.btn-group-vertical>.btn-group:after,
+.btn-group-vertical>.btn-group:before,
+.btn-toolbar:after,
+.btn-toolbar:before,
+.clearfix:after,
+.clearfix:before,
+.container-fluid:after,
+.container-fluid:before,
+.container:after,
+.container:before,
+.dl-horizontal dd:after,
+.dl-horizontal dd:before,
+.form-horizontal .form-group:after,
+.form-horizontal .form-group:before,
+.modal-footer:after,
+.modal-footer:before,
+.modal-header:after,
+.modal-header:before,
+.nav:after,
+.nav:before,
+.navbar-collapse:after,
+.navbar-collapse:before,
+.navbar-header:after,
+.navbar-header:before,
+.navbar:after,
+.navbar:before,
+.pager:after,
+.pager:before,
+.panel-body:after,
+.panel-body:before,
+.row:after,
+.row:before {
+    display: table;
+    content: " ";
+}
+
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+.agent-contact .phone-number {
+    margin: 10px;
+    color: #222;
+}
+.phone-number:hover {
+    color: #01adba;
+}
+.agent-contact .show-number {
+    float: right;
+    font-weight: 600;
+    color: #01adba;
+}
+.agent-contact .phone-visible .phone-number {
+    display: inline;
+    /* Hiển thị số điện thoại khi được kích hoạt */
+}
+.agent-contact {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.agent-contact div {
+    display: inline-block;
+}
+
+.agent-contact a {
+    display: block;
+    text-decoration: none;
+    border: 2px solid #01adba;
+    padding: 10px 30px;
+    color: #01adba;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    /* Khoảng cách giữa hai liên kết */
+}
+
+.agent-contact .a-2 {
+        display: block;
+            text-decoration: none;
+            border: 2px solid #01adba;
+            padding: 10px 30%;
+            color: #01adba;
+            border-radius: 5px;
+            margin-bottom: 10px;
+}
+
+.icon-3 {
+    display: flex;
+    justify-content: center;
+    /* Căn giữa theo chiều ngang */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+}
+
+.room-list {
+    display: flex;
+    overflow-x: hidden;
+    overflow-x: hidden;
+    /* Cho phép cuộn ngang nếu nội dung vượt quá chiều rộng của container */
+    scroll-snap-type: x mandatory;
+    /* Bắt buộc cuộn ngang đến vị trí cố định */
+    -webkit-overflow-scrolling: touch;
+    /* Cải thiện hiệu suất cuộn trên các thiết bị cảm ứng */
+}
+
+.room {
+    flex: 0 0 auto;
+    width: 280px;
+    height: 300px;
+    margin-right: 15px;
+    scroll-snap-align: start;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    /* Ngăn nội dung tràn ra */
+    position: relative;
+    /* Đặt vị trí tương đối cho positioning nội dung bên trong */
+    padding: 10px;
+    /* Khoảng cách trong */
+}
+
+.room-info {
+    height: 100%;
+    /* Chiều cao bằng với .room */
+    overflow: auto;
+    /* Cho phép cuộn nếu cần */
+    display: flex;
+    flex-direction: column;
+    /* Sắp xếp nội dung dọc */
+}
+
+.room-info img {
+    height: 60%;
+    /* Giới hạn chiều cao hình ảnh */
+    width: 100%;
+    /* Chiều rộng đầy đủ */
+    object-fit: cover;
+    /* Đảm bảo hình ảnh phù hợp với không gian mà không bị méo */
+}
+
+.room-info h2 {
+    font-size: 14px;
+    /* Điều chỉnh kích thước phông chữ */
+    margin-top: 6px;
+    /* Khoảng cách sau hình ảnh */
+    overflow: hidden;
+    /* Thêm dấu "..." nếu tiêu đề quá dài */
+}
+
+.room-info ul {
+    padding: 0;
+    margin-top: 6px;
+    /* Loại bỏ khoảng cách mặc định */
+    list-style-type: none;
+    /* Loại bỏ dấu đầu dòng */
+    display: flex;
+    /* Đặt các mục li trên cùng một hàng */
+    flex-wrap: wrap;
+    /* Cho phép các mục li bọc nếu không đủ không gian */
+    gap: 20px;
+    /* Thêm khoảng cách giữa các mục li */
+}
+
+.room-info li {
+    font-size: 14px;
+    /* Điều chỉnh kích thước phông chữ */
+    white-space: nowrap;
+    /* Ngăn ngừa việc xuống dòng trong mỗi mục */
+}
+
+.room-info p {
+    font-size: 12px;
+    margin-top: auto;
+    /* Đẩy giá xuống dưới cùng */
+}
+
+
+.room-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.room-buttons button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}

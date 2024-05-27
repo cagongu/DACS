@@ -1,0 +1,12 @@
+<div class="widget similar" ng-non-bindable="">
+    <h3>Loại bất động sản</h3>
+    <ul *ngFor="let tempCategory of roomCategories">
+        <li>
+            <a class="circle" routerLink="/category/{{tempCategory.id}}" routerLinkActive="active-link" gtm-event="link"
+                gtm-cat="listing-similar" gtm-act="cat-right" title="{{tempCategory.name}}">
+                <i class="fa-solid fa-circle-chevron-right" style="color: #000000;"></i> {{tempCategory.name}}
+                <!-- <span >{{ getRoomCount(tempCategory.id) }}</span> -->
+            </a>
+        </li>
+    </ul>
+</div>

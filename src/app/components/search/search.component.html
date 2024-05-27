@@ -1,0 +1,4 @@
+<input #myInput type="text" class="form-control" placeholder="Từ khóa ..." style="border: none;" (keyup.enter)="doSearch(myInput.value)">
+<button type="submit" style="background-color: transparent; border: none;width:30px;" (click)="doSearch(myInput.value)">
+    <i id="searchIcon" class="fa fa-search" style="color: #6c757d3d;"></i>
+</button>

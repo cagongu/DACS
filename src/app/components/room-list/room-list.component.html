@@ -1,0 +1,53 @@
+<ul *ngFor="let tempRoom of rooms" class="props">
+  <li>
+    <div class="prop-img">
+      <img
+        srcset="https://cloud.mogi.vn/images/thumb-ms/2024/04/24/437/b655c95d609d4eed8f22acd880ff8c32.jpg 991w, https://cloud.mogi.vn/images/thumb-small/2024/04/24/437/b655c95d609d4eed8f22acd880ff8c32.jpg 992w"
+        sizes="100vw" alt="Hình ảnh Giá chỉ từ 131k/ngày - đầy đủ tiện nghi, không tốn thêm phí">
+    </div>
+
+    <div class="prop-info">
+      <a class="link-overlay" routerLink="/rooms/{{tempRoom.id}}">
+        <h2 class="prop-title">{{tempRoom.description}}</h2>
+      </a>
+      <div class="prop-addr">{{tempRoom.address}}</div>
+      <ul class="prop-attr">
+        <li>{{tempRoom.detail.area}} m<sup>2</sup></li>
+        <li>0 PN</li>
+        <li>0 WC</li>
+      </ul>
+      <div class="price">{{tempRoom.price | currency: 'VND'}} </div>
+    </div>
+
+    <div class="prop-extra">
+      <div class="prop-created">{{tempRoom.lastUpdated}}</div>
+      <div class="prop-favorite" id="2001"><i class="fa fa-heart" aria-hidden="true" onclick="toggleHeart(this)"></i>
+      </div>
+    </div>
+
+    <div class="up-item"><i class="fa fa-star up-item-star"></i></div>
+  </li>
+</ul>
+
+<div class="footer-pagination">
+  <div class="row">
+      <div class="col-md-9" style="padding-left: 30%;">
+          <ngb-pagination [(page)]="thePageNumber" [maxSize]="5" [pageSize]="thePageSize"
+              [collectionSize]="theTotalElements" (pageChange)="listRooms()">
+          </ngb-pagination>
+      </div>
+      <div class="col-md-3 mt-2" style="text-align: right;">
+          <span class="mr-2">Page Size</span>
+          <select #myPageSelect (change)="updatePageSize(myPageSelect.value)">
+              <option selected="true">5</option>
+              <option>10</option>
+              <option>20</option>
+              <option>50</option>
+          </select>
+      </div>
+  </div>
+</div>
+
+<div class="showmore" style="display: flex; justify-content: center; margin-top: 30px;">
+  <button class="btn-showmore" onclick="showMore()">Xem thêm...</button>
+</div>
