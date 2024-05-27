@@ -1,0 +1,351 @@
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid margin-nav">
+    <a class="navbar-brand" href="/">
+      <img src="https://mogi.vn/content/Images/logo.svg" alt="Logo" height="40">
+    </a>
+    <div class="ms-auto d-flex">
+      <ul class="navbar-nav justify-content-end">
+        <!-- <li class="nav-item">
+          <a class="nav-link fontsize-15px" aria-current="page" href="#">Tìm thuê</a>
+        </li> -->
+        <li class="nav-item">
+          <app-login></app-login>
+        </li>
+        <li class="nav-item">
+          <app-register></app-register>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- navbar -->
+
+<!-- main -->
+<div id="page-content" class="main-container">
+  <div id="search-bar" class="d-flex align-items-center">
+    <!-- Thanh tìm kiếm -->
+
+    <div class="input-group dropdown ms-2"
+      style="border: solid #6c757d3d;border-radius: 5px;width:30%;margin-left: 0 !important; display: flex; flex-direction: row; justify-content: space-between;">
+      <!--  search -->
+      <app-search></app-search>
+      <!--  search -->
+    </div>
+
+
+    <!-- Dropdown "Toàn quốc", "Nhà", "Giá thuê" -->
+    <div class="dropdown ms-2" style="width:15%;">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+        aria-expanded="false" style="width:100%;">
+        <i class="fa-solid fa-location-dot"></i>
+        Toàn Quốc
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">TP HCM</a></li>
+        <li><a class="dropdown-item" href="#">Hà Nội</a></li>
+        <li><a class="dropdown-item" href="#">Đà Nẵng</a></li>
+      </ul>
+    </div>
+
+    <div class="dropdown ms-2" style="width:15%;">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+        aria-expanded="false" style="width:100%;">
+        <i class="fa-solid fa-house"></i>
+        Nhà
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Tất cả</a></li>
+        <li><a class="dropdown-item" href="#">Mặt tiền, phố</a></li>
+        <li><a class="dropdown-item" href="#">Biệt thự, liền kề</a></li>
+        <li><a class="dropdown-item" href="#">Hẻm, ngõ</a></li>
+      </ul>
+    </div>
+    <div class="dropdown ms-2" style="width:15%;">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+        aria-expanded="false" style="width:100%;">
+        <i class="fa-solid fa-dollar-sign"></i>
+        Giá Thuê
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">TP HCM</a></li>
+        <li><a class="dropdown-item" href="#">Hà Nội</a></li>
+        <li><a class="dropdown-item" href="#">Đà Nẵng</a></li>
+      </ul>
+    </div>
+
+    <!-- Lọc thêm -->
+    <div class="dropdown ms-2" style="width:15%;">
+      <button class="btn btn-secondary ms-auto" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="width:100%;">
+        <i class="fa-solid fa-filter"></i>
+        Lọc thêm
+      </button>
+    </div>
+  </div>
+  <!-- Phần nội dung lọc thêm -->
+  <div class="collapse mt-2" id="collapseExample">
+    <div class="card card-body">
+      <!-- Nội dung lọc thêm -->
+      <p>Placeholder content for additional filtering options...</p>
+    </div>
+  </div>
+
+  <div>
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="http://127.0.0.1:3000/NhaTot/index.html#" class="a-home">Home</a></li>
+        <li class="breadcrumb-item active not-apply-css" aria-current="page">Cho thuê nhà đất</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div id="property" class="clearfix">
+    <div class="property-listing">
+      <h1 class="page-tile">Cho Thuê Nhà Đất Giá Rẻ, Tiện Nghi, Uy Tín, Cập Nhật Mới Nhất T4/2024</h1>
+      <div class="property-list-result"><span><b>1 - 15</b> trong <b>446.404</b></span></div>
+
+      <!-- List Phong -->
+      <!-- <app-room-list></app-room-list> -->
+      <router-outlet></router-outlet>
+
+    </div>
+
+    <!-- sidebar -->
+    <div class="side-bar">
+      <div id="property_sidebar">
+
+        <!-- dynamic category menu -->
+        <app-room-category></app-room-category>
+        <!-- end dynamic category menu -->
+
+
+
+        <div class="widget news-widget" ng-non-bindable="">
+          <h3>Tin tức bất động sản
+            <a class="view-more" href="https://news.mogi.vn" target="_blank" rel="nofollow" gtm-event="link"
+              gtm-cat="blog" gtm-act="view-more">Xem thêm<i class="fa fa-angle-right"></i></a>
+          </h3>
+          <ul>
+            <li>
+              <div class="news-media"><img class="lozad"
+                  data-src="https://cloud.mogi.vn/news/thumb-xs/2024/04/24/420/7e1d28ca23214aa49a34d269267070f9.jpg"
+                  alt="" src="https://cloud.mogi.vn/news/thumb-xs/2024/04/24/420/7e1d28ca23214aa49a34d269267070f9.jpg"
+                  data-loaded="true"></div>
+              <div class="news-content">
+                <div class="news-title"><a href="https://mogi.vn/news/thiet-ke-noi-that-chung-cu-80m2-238223/"
+                    class="link-overlay" rel="nofollow" gtm-event="link" gtm-cat="blog" gtm-act="open">Ý Tưởng Thiết Kế
+                    Nội Thất
+                    Chung Cư 80m2 Đẹp Hiện Đại, Tinh Tế</a></div>
+                <div class="news-date">24/04/2024</div>
+              </div>
+            </li>
+            <li>
+              <div class="news-media"><img class="lozad"
+                  data-src="https://cloud.mogi.vn/news/thumb-xs/2024/04/24/437/88ec2dbd71324008b21b4d4d8af1b6e0.jpg"
+                  alt="" src="https://cloud.mogi.vn/news/thumb-xs/2024/04/24/437/88ec2dbd71324008b21b4d4d8af1b6e0.jpg"
+                  data-loaded="true"></div>
+              <div class="news-content">
+                <div class="news-title"><a href="https://mogi.vn/news/co-1-ty-nen-dau-tu-gi-242688/"
+                    class="link-overlay" rel="nofollow" gtm-event="link" gtm-cat="blog" gtm-act="open">Có 1 Tỷ Nên Đầu
+                    Tư Gì? 7 Kênh Đầu Tư Sinh Lời
+                    An Toàn, Hiệu Quả</a></div>
+                <div class="news-date">24/04/2024</div>
+              </div>
+            </li>
+            <li>
+              <div class="news-media"><img class="lozad"
+                  data-src="https://cloud.mogi.vn/news/thumb-xs/2024/04/24/435/6f96d900eb1842a8b5e73573200000d8.jpg"
+                  alt="" src="https://cloud.mogi.vn/news/thumb-xs/2024/04/24/435/6f96d900eb1842a8b5e73573200000d8.jpg"
+                  data-loaded="true"></div>
+              <div class="news-content">
+                <div class="news-title"><a href="https://mogi.vn/news/cac-truong-hop-khong-duoc-tach-thua-dat-242744/"
+                    class="link-overlay" rel="nofollow" gtm-event="link" gtm-cat="blog" gtm-act="open">Các Trường Hợp
+                    Không Được
+                    Tách Thửa Đất Mới Nhất 2024</a></div>
+                <div class="news-date">24/04/2024</div>
+              </div>
+            </li>
+            <li>
+              <div class="news-media"><img class="lozad"
+                  data-src="https://cloud.mogi.vn/news/thumb-xs/2024/04/15/304/934e56e46c2b46738447bb031c6d13c7.jpg"
+                  alt="" src="https://cloud.mogi.vn/news/thumb-xs/2024/04/15/304/934e56e46c2b46738447bb031c6d13c7.jpg"
+                  data-loaded="true"></div>
+              <div class="news-content">
+                <div class="news-title"><a href="https://mogi.vn/news/nha-huong-bac-dat-bep-huong-nao-241237/"
+                    class="link-overlay" rel="nofollow" gtm-event="link" gtm-cat="blog" gtm-act="open">Nhà hướng Bắc đặt
+                    bếp
+                    hướng nào? Lưu ý khi xác định hướng đặt bếp</a></div>
+                <div class="news-date">15/04/2024</div>
+              </div>
+            </li>
+            <li>
+              <div class="news-media"><img class="lozad"
+                  data-src="https://cloud.mogi.vn/news/thumb-xs/2024/04/15/243/c9883dae06e24218b0c1e95b1d22eedd.jpg"
+                  alt="" src="https://cloud.mogi.vn/news/thumb-xs/2024/04/15/243/c9883dae06e24218b0c1e95b1d22eedd.jpg"
+                  data-loaded="true"></div>
+              <div class="news-content">
+                <div class="news-title"><a href="https://mogi.vn/news/nga-tu-go-may-o-dau-241331/" class="link-overlay"
+                    rel="nofollow" gtm-event="link" gtm-cat="blog" gtm-act="open">Ngã Tư Gò Mây Ở Đâu? Giao Thông, Quy
+                    Hoạch Và
+                    Tiện Ích Từ A – Z</a></div>
+                <div class="news-date">15/04/2024</div>
+              </div>
+            </li>
+            <li>
+              <div class="news-media"><img class="lozad"
+                  data-src="https://cloud.mogi.vn/news/thumb-xs/2024/04/15/315/3f56961cb13e4124b59c64508bbf780e.jpg"
+                  alt="" src="https://cloud.mogi.vn/news/thumb-xs/2024/04/15/315/3f56961cb13e4124b59c64508bbf780e.jpg"
+                  data-loaded="true"></div>
+              <div class="news-content">
+                <div class="news-title"><a href="https://mogi.vn/news/nha-25m2-co-lam-duoc-so-do-khong-241576/"
+                    class="link-overlay" rel="nofollow" gtm-event="link" gtm-cat="blog" gtm-act="open">Nhà 25m2 có làm
+                    được sổ
+                    đỏ không? Điều kiện để được cấp sổ đỏ</a></div>
+                <div class="news-date">15/04/2024</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- main -->
+
+
+<!-- footer -->
+<div class="mogi-footer">
+  <div class="container">
+    <div class="footer-right">
+      <ul>
+        <li class="footer-right-parent">
+          <h3 class="footer-title">Bất động sản TPHCM<span class="mogi-collapse collapsed" data-toggle="collapse"
+              data-target="#footer20"></span></h3>
+          <ul id="footer20" class="collapse">
+            <li><a href="/ho-chi-minh/mua-nha-dat">Mua bán nhà đất TPHCM</a></li>
+            <li><a href="/ho-chi-minh/quan-7/mua-nha">Bán nhà quận 7</a></li>
+            <li><a href="/ho-chi-minh/quan-7/mua-can-ho">Căn hộ quận 7</a></li>
+            <li><a href="/ho-chi-minh/quan-9/mua-dat">Bán đất quận 9</a></li>
+            <li><a href="/ho-chi-minh/quan-10/thue-phong-tro-nha-tro">Phòng trọ quận 10</a></li>
+            <li><a href="/ho-chi-minh/quan-8/thue-nha">Cho thuê nhà quận 8</a></li>
+          </ul>
+        </li>
+        <li class="footer-right-parent">
+          <h3 class="footer-title">Bất động sản Hà Nội<span class="mogi-collapse collapsed" data-toggle="collapse"
+              data-target="#footer21"></span></h3>
+          <ul id="footer21" class="collapse">
+            <li><a href="/ha-noi/mua-dat">Bán đất Hà Nội</a></li>
+            <li><a href="/ha-noi/mua-nha">Bán nhà Hà Nội</a></li>
+            <li><a href="/ha-noi/thue-nha">Cho thuê nhà Hà Nội</a></li>
+            <li><a href="/ha-noi/mua-can-ho-chung-cu">Chung cư Hà Nội</a></li>
+            <li><a href="/ha-noi/mua-nha-dat">Nhà đất Hà Nội</a></li>
+            <li><a href="/ha-noi/thue-phong-tro-nha-tro">Phòng trọ Hà Nội</a></li>
+          </ul>
+        </li>
+        <li class="footer-right-parent">
+          <h3 class="footer-title">Mua bán bất động sản<span class="mogi-collapse collapsed" data-toggle="collapse"
+              data-target="#footer22"></span></h3>
+          <ul id="footer22" class="collapse">
+            <li><a href="/binh-duong/mua-dat">Bán đất Bình Dương</a></li>
+            <li><a href="/da-nang/mua-nha-dat">Bất động sản Đà Nẵng</a></li>
+            <li><a href="/mua-can-ho-chung-cu">Căn hộ chung cư</a></li>
+            <li><a href="/mua-nha-dat">Mua bán nhà đất</a></li>
+            <li><a href="/hai-phong/mua-nha-dat">Nhà đất Hải Phòng</a></li>
+            <li><a href="/mua-mat-bang-cua-hang-shop-cafe-do-uong">Sang quán cafe</a></li>
+          </ul>
+        </li>
+        <li class="footer-right-parent">
+          <h3 class="footer-title">Cho thuê nhà đất<span class="mogi-collapse collapsed" data-toggle="collapse"
+              data-target="#footer23"></span></h3>
+          <ul id="footer23" class="collapse">
+            <li><a href="/thue-can-ho">Cho thuê căn hộ</a></li>
+            <li><a href="/thue-mat-bang-cua-hang-shop">Cho thuê mặt bằng</a></li>
+            <li><a href="/thue-nha">Cho thuê nhà nguyên căn</a></li>
+            <li><a href="/thue-nha-xuong-kho-bai-dat">Cho thuê nhà xưởng</a></li>
+            <li><a href="/thue-phong-tro-nha-tro">Cho thuê phòng trọ</a></li>
+            <li><a href="/thue-van-phong">Cho thuê văn phòng</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li class="footer-right-parent">
+          <h3 class="footer-title">Về Mogi<span class="mogi-collapse collapsed" data-toggle="collapse"
+              data-target="#footer16"></span></h3>
+          <ul id="footer16" class="collapse">
+            <li><a href="https://trogiup.mogi.vn/mogi-vn-trieu-niem-tin-dinh-hinh-thuong-hieu">Về chúng tôi</a></li>
+            <li><a href="https://trogiup.mogi.vn/dieu-khoan-su-dung/">Điều khoản sử dụng</a></li>
+            <li><a href="https://trogiup.mogi.vn/quy-che-hoat-dong/">Quy chế hoạt động</a></li>
+            <li><a href="https://trogiup.mogi.vn/thoa-thuan-mang-xa-hoi/">Thỏa thuận mạng XH</a></li>
+            <li><a href="https://mogi.vn/lien-he/gui-lien-he">Liên Hệ</a></li>
+          </ul>
+        </li>
+        <li class="footer-right-parent">
+          <h3 class="footer-title">Đối Tác - Thông tin<span class="mogi-collapse collapsed" data-toggle="collapse"
+              data-target="#footer17"></span></h3>
+          <ul id="footer17" class="collapse">
+            <li><a href="https://mogi.vn/news/">Tin tức bất động sản</a></li>
+            <li><a href="https://muaban.net" target="_blank" rel="noopener nofollow">Muaban.net - Mua bán rao vặt</a>
+            </li>
+            <li><a href="https://vieclam.net/" target="_blank" rel="noopener nofollow">Vieclam.net</a></li>
+            <li><a href="https://vieclam.net/blog/" target="_blank" rel="noopener nofollow">Cẩm nang tìm việc</a></li>
+            <li><a href="https://trogiup.mogi.vn/tin-tuc/">Góc báo chí</a></li>
+          </ul>
+        </li>
+        <li class="footer-right-parent">
+          <h3 class="footer-title">Công cụ - Tiện ích<span class="mogi-collapse collapsed" data-toggle="collapse"
+              data-target="#footer18"></span></h3>
+          <ul id="footer18" class="collapse">
+            <li><a href="https://mogi.vn/phong-tro-gan-kcn">Phòng trọ gần KCN</a></li>
+            <li><a href="https://mogi.vn/phong-tro-gan-truong">Phòng trọ gần trường</a></li>
+            <li><a href="https://mogi.vn/10-buoc-mua-nha">10 bước mua nhà</a></li>
+            <li><a href="https://mogi.vn/tim-moi-gioi/ho-chi-minh-cid30">Môi giới bất động sản TPHCM</a></li>
+            <li><a href="https://mogi.vn/tim-moi-gioi/ha-noi-cid24">Môi giới nhà đất Hà Nội</a></li>
+          </ul>
+        </li>
+        <li class="footer-right-parent">
+          <h3 class="footer-title">Dịch vụ - Quảng cáo<span class="mogi-collapse collapsed" data-toggle="collapse"
+              data-target="#footer19"></span></h3>
+          <ul id="footer19" class="collapse">
+            <li><a href="https://trogiup.mogi.vn/khuyen-mai">Chương trình - Khuyến mãi</a></li>
+            <li><a href="https://trogiup.mogi.vn/bang-gia-phi-thanh-vien/" target="_blank" rel="noopener nofollow">Phí
+                thành viên</a></li>
+            <li><a href="https://trogiup.mogi.vn/phi-dich-vu-tin-dang-noi-bat/" target="_blank"
+                rel="noopener nofollow">Phí dịch vụ tin đăng nổi bật</a></li>
+            <li><a href="https://trogiup.mogi.vn/huong-dan-dang-tin-tren-mogi" target="_blank"
+                rel="noopener nofollow">Hướng dẫn đăng tin</a></li>
+            <li><a href="https://trogiup.mogi.vn/huong-dan-thanh-toan-tren-mogi-vn/" target="_blank"
+                rel="noopener nofollow">Hướng dẫn thanh toán</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+    <div class="footer-left">
+      <ul class="footer-01">
+        <li><img src="https://mogi.vn/content/images/logo.svg" alt="Mogi.vn" height="32" width="96"></li>
+        <li><i class="fa fa-phone"></i>(028) 73001234</li>
+        <li><i class="fa fa-envelope"></i><a href="mailto:trogiup@mogi.vn">trogiup</a></li>
+        <li class="social-icon">
+
+          <a aria-label="mogi facebook" href="https://www.facebook.com/mogivietnam" target="_blank" rel="nofollow"><i
+              class="fa fa-facebook"></i></a>
+          <a aria-label="mogi youtube" href="https://www.youtube.com/channel/UCzLLWVLmKqzmIDIOmYFHiZg" target="_blank"
+            rel="nofollow"><i class="fa fa-youtube"></i></a>
+          <a aria-label="mogi zalo" href="https://zalo.me/4599343447665056788" class="zalo-icon" target="_blank"
+            rel="nofollow"><img width="30" height="30" src="https://img.icons8.com/color/48/zalo.png" alt="zalo"
+              style="padding-bottom: 5px;" /></a>
+        </li>
+      </ul>
+      <ul class="footer-02">
+        <li>
+          <h3 class="footer-title">CÔNG TY 3 THÀNH VIÊN</h3>
+        </li>
+        <li>Trụ sở chính: 30 Tân Lập 1, P.Tân Phú, Quận 9, TP. Hồ Chí Minh<br>Chịu trách nhiệm chính:
+          Ông Phạm Chu Hi</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- footer -->
