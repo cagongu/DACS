@@ -1,4 +1,12 @@
-<input #myInput type="text" placeholder="Search anything ..." style="border: none; height: 100%;" (keyup.enter)="doSearch(myInput.value)">
+<!-- <input  type="text" placeholder="Search anything ..." style="border: none; height: 100%;" >
 <button (click)="doSearch(myInput.value)" class="btn btn-secondary" type="button" style="right: 0;">
     <i class="fa fa-search" style="color: #6c757d3d;"></i>
-</button>
+</button> -->
+
+<div class="search-input">
+    <form id="search" action="#">
+        <input type="text" #myInput placeholder="Type Something" id='searchText' name="searchKeyword"
+            onkeypress="handle" (keyup.enter)="doSearch(myInput.value)" />
+        <i class="fa fa-search"></i>
+    </form>
+</div>

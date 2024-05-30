@@ -2,17 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { Room } from '../../common/room';
 import { RoomService } from '../../services/room.service';
 import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-room-details',
   templateUrl: './room-details.component.html',
   styleUrl: './room-details.component.css'
 })
-export class RoomDetailsComponent implements OnInit{
+export class RoomDetailsComponent implements OnInit {
 
   room!: Room;
 
-  constructor(private roomService: RoomService, private route: ActivatedRoute){}
+  constructor(private roomService: RoomService, private route: ActivatedRoute,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
 
@@ -22,7 +23,7 @@ export class RoomDetailsComponent implements OnInit{
   }
   handleProductDetails() {
 
-    const theRoomId: number = +this.route.snapshot.paramMap.get('id')!;
+    const theRoomId: string = this.route.snapshot.paramMap.get('id')!;
 
     this.roomService.getRoom(theRoomId).subscribe(
       data => {
@@ -30,6 +31,4 @@ export class RoomDetailsComponent implements OnInit{
       }
     );
   }
-
-
 }

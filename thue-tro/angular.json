@@ -31,15 +31,20 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "./src/favicon.ico",
-              "./src/assets"
+              "src/favicon.ico",
+              "src/assets/css/fontawesome.css",
+              "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/css/templatemo-cyborg-gaming.css",
+              "src/assets/css/owl.css",
+              "src/assets/css/animate.css",
+              "src/vendor/bootstrap/css/bootstrap.min.css",
+              "src/styles.css"
             ],
             "scripts": [
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {

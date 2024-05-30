@@ -37,9 +37,8 @@ export class RoomService {
     )
   }
 
-  getRoom(theRoomId: number) : Observable<Room> {
+  getRoom(theRoomId: string) : Observable<Room> {
     const roomUrl = `${this.BaseUrl}/${theRoomId}`;
-
     return this.httpClient.get<Room>(roomUrl);
   }
 
