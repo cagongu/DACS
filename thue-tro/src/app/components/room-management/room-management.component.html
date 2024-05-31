@@ -1,0 +1,141 @@
+<div class="row">
+    <div class="col-lg-8">
+        <div class="featured-games header-text">
+            <!-- <div class="heading-section">
+                <h4><em>Room</em> Status</h4>
+            </div> -->
+
+            <div class="card-header msg_head mb-4">
+                <div class="d-flex" style="padding: 10px;">
+                    <div class="img_cont">
+                        <!-- chỗ này để tên của secondUser -->
+                        <div class="rounded-circle user_img text_inside_circle1">
+                            L
+                        </div>
+
+                    </div>
+                    <div class="user_info">
+                        <span>LahutaM</span>
+                        <p>Message</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body msg_card_body" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+
+                <!-- <div *ngFor="let msg of messageList"> -->
+
+                <!-- *ngIf="msg.senderEmail==senderCheck" -->
+                <div class="d-flex justify-content-end mb-4">
+                    <div class="msg_cotainer_send">
+                        <!-- {{msg.replymessage}} -->
+
+                        hehehe
+                        <span class="msg_time_send">
+                            <!-- {{msg.time.substring(11,16)}} -->
+                            12:00
+                        </span>
+                    </div>
+                    <div class="img_cont_msg">
+                        <span class="rounded-circle user_img_msg text_inside_circle2">
+                            <!-- {{msg.senderEmail.substring(0,1)}} -->
+                            L
+                        </span>
+                    </div>
+                </div>
+
+                <!-- *ngIf="msg.senderEmail!=senderCheck" -->
+                <div class="d-flex justify-content-start mb-4">
+                    <div class="img_cont_msg">
+                        <span class="rounded-circle user_img_msg text_inside_circle3">
+                            <!-- {{msg.senderEmail.substring(0,1)}} -->
+                            H
+                        </span>
+                    </div>
+                    <div class="msg_cotainer">
+                        <!-- {{msg.replymessage}} -->
+                        Sao The
+                        <span class="msg_time">
+                            <!-- {{msg.time.substring(11,16)}} -->
+                            12:00
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- </div> -->
+
+            <div class="card-footer" style="border-radius: 15px;">
+                <!-- [formGroup]="chatForm" -->
+                <form class="form-control" style="padding: 0; border-radius: 20px; border: none;">
+                    <div class="input-group">
+                        <!-- <div class="input-group-append">
+                            <span class="input-group-text attach_btn"></span>
+                        </div> -->
+                        <!-- <textarea name="" class="form-control type_msg" placeholder="Type your message..."
+                            formControlName="replymessage" (keyup.enter)="sendMessage()">
+                        </textarea> -->
+                        <textarea name="" class="form-control type_msg" placeholder="Type your message...">
+
+                        </textarea>
+
+                        <div class="input-group-append">
+                            <button class="input-group-text send_btn" (click)="sendMessage()">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="col-lg-4">
+        <div class="top-streamers">
+            <div class="heading-section">
+                <h4><em>Top</em> Members</h4>
+            </div>
+            <ul>
+                <li>
+                    <span>01</span>
+                    <img src="assets/images/avatar-01.jpg" alt=""
+                        style="max-width: 46px; border-radius: 50%; margin-right: 15px;">
+                    <h6><i class="fa fa-check"></i> LahutaM</h6>
+                    <div class="main-button">
+                        <a href="#">Inbox</a>
+                    </div>
+                </li>
+                <li>
+                    <span>02</span>
+                    <img src="assets/images/avatar-02.jpg" alt=""
+                        style="max-width: 46px; border-radius: 50%; margin-right: 15px;">
+                    <h6><i class="fa fa-check"></i> Kengan</h6>
+                    <div class="main-button">
+                        <a href="#">Inbox</a>
+                    </div>
+                </li>
+                <li>
+                    <span>03</span>
+                    <img src="assets/images/avatar-03.jpg" alt=""
+                        style="max-width: 46px; border-radius: 50%; margin-right: 15px;">
+                    <h6><i class="fa fa-check"></i> Areluwa</h6>
+                    <div class="main-button">
+                        <a href="#">Inbox</a>
+                    </div>
+                </li>
+                <li>
+                    <span>04</span>
+                    <img src="assets/images/avatar-04.jpg" alt=""
+                        style="max-width: 46px; border-radius: 50%; margin-right: 15px;">
+                    <h6><i class="fa fa-check"></i> Omeg</h6>
+                    <div class="main-button">
+                        <a href="#">Inbox</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

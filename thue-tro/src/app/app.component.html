@@ -41,9 +41,10 @@
             <ul class="nav">
               <li><a href="#" class="active">RoomList</a></li>
               <li><a href="#">Room Owner</a></li>
-              <li><a href="#">Login</a></li>
-              <li><a href="#">Register</a></li>
-              <li><a href="#">Profile <img src="assets/images/profile-header.jpg" alt=""></a></li>
+              <li *ngIf="!isLoggedIn"><a routerLink="/login">Log in</a></li>
+              <li *ngIf="isLoggedIn"><a (click)="logout()">Log out</a></li>
+              <li><a routerLink="/register">Register</a></li>
+              <li><a href="#">Profile<img src="assets/images/profile-header.jpg" alt=""></a></li>
             </ul>
             <a class='menu-trigger'>
               <span>Menu</span>

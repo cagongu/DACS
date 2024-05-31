@@ -1,13 +1,29 @@
 import { Injectable } from '@angular/core';
-import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HTTP_INTERCEPTORS, HttpErrorResponse } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
+import { StorageService } from '../services/storage.service';
 
 @Injectable()
 export class HttpRequestInterceptor implements HttpInterceptor {
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    req = req.clone({
-      withCredentials: true,
-    });
+  constructor(private storageService: StorageService) { }
+
+  intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const token = this.storageService.getToken();
+    
+    if (token) {
+      const newReq = req.clone({
+        setHeaders: { Authorization: `Bearer ${token}` }
+      });
+      console.log(newReq.headers.get('Authorization'));
+
+      return next.handle(newReq).pipe(
+        catchError((error: HttpErrorResponse) => {
+          // Xử lý lỗi tại đây
+          console.error('Xảy ra lỗi:', error.error || error.statusText);
+          return throwError(error);
+        })
+      );
+    }
 
     return next.handle(req);
   }

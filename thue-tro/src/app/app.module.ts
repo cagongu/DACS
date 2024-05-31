@@ -11,8 +11,9 @@ import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { httpInterceptorProviders } from './helpers/auth.interceptor';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
+import { RoomManagementComponent } from './components/room-management/room-management.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { RoomDetailsComponent } from './components/room-details/room-details.com
     SearchComponent,
     LoginComponent,
     RegisterComponent,
-    RoomDetailsComponent
+    RoomDetailsComponent,
+    RoomManagementComponent
   ],
   imports: [
     BrowserModule,

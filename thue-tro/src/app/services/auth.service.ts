@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { StorageService } from './storage.service';
+import { tap } from 'rxjs/operators';
 
 const AUTH_API = 'http://localhost:8080/api/auth';
 
@@ -14,7 +16,7 @@ const httpOptions = {
 
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private storageService: StorageService) { }
 
   login(username: string, password: string):Observable<any>{
     return this.http.post(
@@ -24,6 +26,12 @@ export class AuthService {
         password,
       },
       httpOptions
+    ).pipe(
+      // Xử lý phản hồi từ server
+      tap((response: any) => {
+        // Lưu token vào storage khi login thành công
+        this.storageService.saveToken(response.accessToken);
+      })
     );
   }
 
@@ -40,6 +48,6 @@ export class AuthService {
   }
 
   logout(): Observable<any> {
-    return this.http.post(AUTH_API + 'logout', { }, httpOptions);
+    return this.http.post(AUTH_API + '/logout', { }, httpOptions);
   }
 }

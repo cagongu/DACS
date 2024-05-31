@@ -4,6 +4,7 @@ import { RoomListComponent } from './components/room-list/room-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
+import { RoomManagementComponent } from './components/room-management/room-management.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'search/:keyword',
     component: RoomListComponent
+  },
+  {
+    path: 'room-management/:id',
+    component: RoomManagementComponent
   },
   {
     path: '',

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -13,30 +14,24 @@ export class RegisterComponent {
     password: null
   };
   isSuccessful = false;
-  isSignUpFailed = false;
   errorMessage = '';
-  showSignUpForm = false;
+  registeredUsername!: string;
+  registeredEmail!: string;
 
   constructor(private authService: AuthService) { }
 
   onSubmit(): void {
     const { username, email, password } = this.form;
 
-    console.log(this.form)
-
     this.authService.register(username, email, password).subscribe({
       next: data => {
-        console.log(data);
         this.isSuccessful = true;
-        this.isSignUpFailed = false;
+        this.registeredUsername = username;
+        this.registeredEmail = email;
       },
       error: err => {
         this.errorMessage = err.error.message;
-        this.isSignUpFailed = true;
       }
     });
-  }
-  onLoginButtonClick() {
-    this.showSignUpForm = true;
   }
 }
