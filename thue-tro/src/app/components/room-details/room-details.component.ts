@@ -3,6 +3,7 @@ import { Room } from '../../common/room';
 import { RoomService } from '../../services/room.service';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { User } from '../../common/user';
 
 @Component({
   selector: 'app-room-details',
@@ -12,6 +13,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class RoomDetailsComponent implements OnInit {
 
   room!: Room;
+  roomOwner!: User;
 
   constructor(private roomService: RoomService, private route: ActivatedRoute,private sanitizer: DomSanitizer) { }
 

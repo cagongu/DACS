@@ -3,6 +3,7 @@ export class Room {
         public createdDate: Date,
         public lastModifiedDate: Date,
         public name:string,
+        public room_owner_id: string,
         public register: boolean,
         public enable : boolean,
         public detail: {

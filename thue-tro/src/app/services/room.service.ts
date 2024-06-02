@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Room } from '../common/room';
 import { Observable, map } from 'rxjs';
 import { RoomCategory } from '../common/room-category';
+import { User } from '../common/user';
 
 @Injectable({
   providedIn: 'root'
@@ -22,14 +23,14 @@ export class RoomService {
     );
   }
 
-  getRoomCategories() : Observable<RoomCategory[]> {
+  getRoomCategories(): Observable<RoomCategory[]> {
 
     return this.httpClient.get<RoomCategory[]>(this.CategoryUrl).pipe(
       map(response => response)
     )
   }
 
-  searchRooms(theKeyWord: string):Observable<Room[]> {
+  searchRooms(theKeyWord: string): Observable<Room[]> {
     const searchUrl = `${this.BaseUrl}?roomName=${theKeyWord}`
 
     return this.httpClient.get<GetResponse>(searchUrl).pipe(
@@ -37,13 +38,33 @@ export class RoomService {
     )
   }
 
-  getRoom(theRoomId: string) : Observable<Room> {
+  getRoom(theRoomId: string): Observable<Room> {
     const roomUrl = `${this.BaseUrl}/${theRoomId}`;
     return this.httpClient.get<Room>(roomUrl);
+  }
+
+  getUserById(userId: string): Observable<User>{
+    const findUrl = `http://localhost:8080/users/getbyid/${userId}`;
+    return this.httpClient.get<User>(findUrl);
+  }
+
+  getUserInRoom(theRoomId: string): Observable<User[]> {
+    const findUserUrl = `http://localhost:8080/users/getuserinroombyid/${theRoomId}`;
+    return this.httpClient.get<User[]>(findUserUrl).pipe(
+      map(data => {
+        return data.map(item => new User(
+          item.userId,
+          item.username,
+          item.password,
+          item.email,
+          item.rooms
+        ));
+      })
+    );
   }
 
 }
 
 interface GetResponse {
-  content:Room[]
+  content: Room[]
 }

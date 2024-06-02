@@ -31,6 +31,7 @@ export class AuthService {
       tap((response: any) => {
         // Lưu token vào storage khi login thành công
         this.storageService.saveToken(response.accessToken);
+        sessionStorage.setItem("USER", username);
       })
     );
   }

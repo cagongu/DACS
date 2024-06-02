@@ -9,14 +9,14 @@ import { Observable } from 'rxjs';
 })
 export class ChatService {
 
-  baseUrl = "http://localhost:8080/chats";
+  baseUrl = "http://localhost:8080";
 
   constructor(private httpClient: HttpClient) { }
 
   //update chat khi bam gui: lay noi dung trong label de up date. 
   // sender se la username cua nguoi gui
   // khi nguoi gui bam vao inbox thi se lay ra chatid luu trong local.
-  updateChat(message: Message, chatId: any): Observable<Object> {
+  updateChat(message: any, chatId: any) {
     //   {
     //     "senderEmail": "loda12",
     //     "replymessage": "Good!"
@@ -55,13 +55,15 @@ export class ChatService {
   }
 
   //kiem tra chat da ton tai chua, neu chua thi tao chat moi.
-  getChatByFirstUserNameAndSecondUserName(firstUserName: String, secondUserName: String) {
-    return this.httpClient.get<Chat>(this.baseUrl + "/chats/getChatByFirstUserNameAndSecondUserName" + '?firstUserName=' + firstUserName + '&secondUserName=' + secondUserName)
+  getChatByFirstUserNameAndSecondUserName(firstUserName: String, secondUserName: String): Observable<Chat[]>{
+
+    return this.httpClient.get<Chat[]>(this.baseUrl + "/chats/getChatByFirstUserNameAndSecondUserName?" 
+                                                  + 'firstUserName=' + firstUserName 
+                                                  + '&secondUserName=' + secondUserName);
   }
 
   //chuc nang nay danh cho addmin hoac khong can thiet vi du an khong theo doi nguoi dung
-  getChatByFirstUserNameOrSecondUserName(username: any) {
-    return this.httpClient.get<Chat>(this.baseUrl + "/chats/getChatByFirstUserNameOrSecondUserName/" + username)
+  getChatByFirstUserNameOrSecondUserName(username: string): Observable<Chat[]> {
+    return this.httpClient.get<Chat[]>(this.baseUrl + "/chats/getChatByFirstUserNameOrSecondUserName/" + username)
   }
-
 }
